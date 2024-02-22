@@ -14,6 +14,7 @@ function startQuiz(type) {
     document.getElementById('progress-bar').style.width = `0%`;
 
     guessType = type;
+    document.getElementById('button-display').innerText = type === 'pairs' ? "Bonding, Lone Pairs" : "Submit"
     fetchData();
 }
 
