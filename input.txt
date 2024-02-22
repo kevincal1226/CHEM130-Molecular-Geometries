@@ -1,0 +1,12 @@
+3 Bonding Pairs and 0 Lone Pairs,Trigonal Planar
+2 Bonding Pairs and 1 Lone Pair,Bent,V-shaped,V shaped,Vshaped
+4 Bonding Pairs and 0 Lone Pairs,Tetrahedral
+3 Bonding Pairs and 1 Lone Pair,Trigonal Pyramidal
+2 Bonding Pairs and 2 Lone Pairs,Bent,V-shaped,V shaped,Vshaped
+5 Bonding Pairs and 0 Lone Pairs,Trigonal Bipyramidal
+4 Bonding Pairs and 1 Lone Pair,See-Saw,Seesaw,See Saw
+3 Bonding Pairs and 2 Lone Pairs,T-shaped,Tshaped,T Shaped
+2 Bonding Pairs and 3 Lone Pairs,Linear
+6 Bonding Pairs and 0 Lone Pairs,Octahedral
+5 Bonding Pairs and 1 Lone Pair,Square Pyramidal
+4 Bonding Pairs and 2 Lone Pairs,Square Planar
