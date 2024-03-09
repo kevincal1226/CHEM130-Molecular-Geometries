@@ -6,8 +6,8 @@ const answers = new Map();
 
 function startQuiz(type) {
     if (type !== 'pairs' && type !== 'names')
-      return;
-  
+        return;
+
     document.getElementById('result-container').classList.add("hidden");
     document.getElementById('question-container').classList.remove("hidden");
     document.getElementById('quiz-menu').classList.add("hidden");
@@ -45,15 +45,7 @@ function shuffleArray(array) {
 function showQuestion() {
     if (currentIndex < data.length) {
         const pair = data[currentIndex];
-        question = (guessType === 'pairs') ? pair.names.join('/'): pair.count;
-        if (question.toUpperCase().includes("BENT")) {
-            if (pair.count.includes("2 Lone Pairs")) {
-                question += " 4 Total Pairs"
-            }
-            else {
-                question += " 3 Total Pairs"
-            }
-        }
+        question = (guessType === 'pairs') ? pair.names.join('/') : pair.count;
         document.getElementById('question').innerText = question;
         document.getElementById('user-input').value = ''; // Clear the user-input box
     } else {
@@ -65,7 +57,7 @@ function checkAnswer() {
     const userAnswer = document.getElementById('user-input').value.trim();
     const pair = data[currentIndex];
     const question = (guessType === 'pairs') ? pair.names.join('/') : pair.count;
-    const correctAnswer = (guessType === 'pairs') ? [pair.count.replace(/\D/g,'').slice(0, 1) + ", " + pair.count.replace(/\D/g,'').slice(1)] : pair.names;
+    const correctAnswer = (guessType === 'pairs') ? [pair.count.replace(/\D/g, '').slice(0, 1) + ", " + pair.count.replace(/\D/g, '').slice(1)] : pair.names;
     if (!answers.has(question)) {
         answers.set(question, {
             correctAnswer: '',
@@ -73,8 +65,8 @@ function checkAnswer() {
         });
     }
 
-    if (correctAnswer.map(answer => answer.toUpperCase().replace(/\s/g, '')).includes(userAnswer.toUpperCase().replace(/\s/g, ''))) {
-        if(document.getElementById('result').innerText.includes('Incorrect')) {
+    if (correctAnswer.map(answer => answer.toUpperCase().replace(/\s/g, '').replace(/ *\([^)]*\) */g, "")).includes(userAnswer.toUpperCase().replace(/\s/g, ''))) {
+        if (document.getElementById('result').innerText.includes('Incorrect')) {
             document.getElementById('result').innerText = '';
         }
         answers.get(question).incorrectAnswers.push('');
@@ -86,7 +78,7 @@ function checkAnswer() {
     } else {
         answers.get(question).incorrectAnswers.push(userAnswer);
 
-        numWrong++;          
+        numWrong++;
         document.getElementById('result').innerText = `Incorrect (${correctAnswer.join('/')})`;
         showQuestion();
     }
